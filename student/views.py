@@ -20,4 +20,7 @@ class StudentOnboardingView(APIView):
 
 # Create your views here.
 def home(req):
-    return render(req,'student/home.html')
+    return render(req,'home.html')
+
+def onboarding_page(request):
+    return render(request, 'onboarding.html')

@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- HERO -->
+<section class="hero-section">
+  <div class="container">
+    <div class="hero-content">
+      <h1 class="hero-title">Smart Career Guidance for Students</h1>
+      <p class="hero-text mt-3">
+        Personalized career paths powered by skills, interests,
+        and real-world industry data.
+      </p>
+      <a href="{% url 'onboarding' %}" class="btn btn-primary btn-lg mt-3">
+        Explore Careers
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="py-5">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-5">How It Helps You</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card feature-card">
+          <h5 class="fw-bold">Skill Gap Analysis</h5>
+          <p class="text-muted">Discover where you stand and what to learn next.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card feature-card">
+          <h5 class="fw-bold">Career Roadmaps</h5>
+          <p class="text-muted">Step-by-step guidance to your dream role.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card feature-card">
+          <h5 class="fw-bold">Course Recommendations</h5>
+          <p class="text-muted">Learn what industry actually needs.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="py-5 bg-light text-center">
+  <div class="container">
+    <h2 class="fw-bold mb-5">Our Impact</h2>
+    <div class="row g-4">
+      <div class="col-md-3">
+        <h3 class="fw-bold">1M+</h3>
+        <p class="text-muted">Students Guided</p>
+      </div>
+      <div class="col-md-3">
+        <h3 class="fw-bold">60%</h3>
+        <p class="text-muted">Career Matches Achieved</p>
+      </div>
+      <div class="col-md-3">
+        <h3 class="fw-bold">200+</h3>
+        <p class="text-muted">Expert Mentors</p>
+      </div>
+      <div class="col-md-3">
+        <h3 class="fw-bold">Free</h3>
+        <p class="text-muted">To Get Started</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

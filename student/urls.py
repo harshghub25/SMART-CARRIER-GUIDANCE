@@ -4,5 +4,6 @@ from .views import StudentOnboardingView
 
 urlpatterns = [
     path('',views.home,name='home'),
-    path('onboarding/', StudentOnboardingView.as_view()),
+    path('onboarding/', views.onboarding_page, name='onboarding'),
+      
 ]

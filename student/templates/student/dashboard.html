@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container mt-5">
+
+  <!-- Greeting -->
+  <div class="mb-4">
+    <h2 class="fw-bold">Welcome, {{ profile.name }} 👋</h2>
+    <p class="text-muted">Here’s your personalized career insight</p>
+  </div>
+
+  <!-- Career Card -->
+  <div class="card shadow-sm p-4 mb-4">
+    <h5 class="text-primary fw-bold mb-2">🎯 Recommended Career Path</h5>
+    <p class="fs-5 mb-0">{{ career }}</p>
+  </div>
+
+  <!-- Profile Summary -->
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="card p-3 shadow-sm">
+        <h6 class="fw-bold">🎓 Degree</h6>
+        <p class="mb-0">{{ profile.degree }}</p>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card p-3 shadow-sm">
+        <h6 class="fw-bold">💡 Interest</h6>
+        <p class="mb-0">{{ profile.interest }}</p>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card p-3 shadow-sm">
+        <h6 class="fw-bold">📅 Graduation Year</h6>
+        <p class="mb-0">{{ profile.graduation_year }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Future Scope -->
+  <div class="alert alert-info mt-4">
+    🚀 Career suggestions are generated using AI-powered natural language models based on student profiles, providing personalized and adaptive guidance.
+  </div>
+
+</div>
+
+{% endblock %}

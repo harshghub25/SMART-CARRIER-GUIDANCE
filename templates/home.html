@@ -1,17 +1,18 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+{% load static %}
 
 {% block content %}
 
 <!-- HERO -->
-<section class="hero-section">
+<section class="hero-section" style="background-image: url('{% static 'images/home.jpg' %}');">
   <div class="container">
     <div class="hero-content">
       <h1 class="hero-title">Smart Career Guidance for Students</h1>
+      <h5 class="hero-title">AI-powered Career Guidance System</h5>
       <p class="hero-text mt-3">
-        Personalized career paths powered by skills, interests,
-        and real-world industry data.
+        Personalized career paths powered by skills, interests, and real-world industry data.
       </p>
-      <a href="{% url 'onboarding' %}" class="btn btn-primary btn-lg mt-3">
+      <a href="{% url 'student:onboarding' %}" class="btn btn-primary btn-lg mt-3">
         Explore Careers
       </a>
     </div>

@@ -2,25 +2,31 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# ---------------- SECURITY ----------------
 SECRET_KEY = 'django-insecure-12345'
-
 DEBUG = True
 
 ALLOWED_HOSTS = []
 
+
+# ---------------- APPLICATIONS ----------------
 INSTALLED_APPS = [
-    
+    "jazzmin",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'rest_framework',
+
+    'accounts',
     'student',
-    'accounts.apps.AccountsConfig',
 ]
 
+
+# ---------------- MIDDLEWARE ----------------
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -30,12 +36,14 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
 ]
 
+
+# ---------------- URL & TEMPLATES ----------------
 ROOT_URLCONF = 'SMART-CARRIER-GUIDANCE.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [BASE_DIR / 'templates'],   # global templates (home, base)
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -48,6 +56,8 @@ TEMPLATES = [
     },
 ]
 
+
+# ---------------- DATABASE ----------------
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -55,18 +65,50 @@ DATABASES = {
     }
 }
 
-STATIC_URL = 'static/'
-STATICFILES_DIRS = [ 
-    BASE_DIR / "static",
-    ]
+
+# ---------------- PASSWORD VALIDATION ----------------
+AUTH_PASSWORD_VALIDATORS = [
+    {
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+    },
+]
+
+
+# ---------------- STATIC FILES ----------------
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
+
+
+# ---------------- DEFAULTS ----------------
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/'
-LOGIN_URL = '/login/'
 
-LOGIN_REDIRECT_URL = 'onboarding'
+# ---------------- AUTH FLOW (VERY IMPORTANT) ----------------
+LOGIN_URL = 'accounts:login'
+LOGIN_REDIRECT_URL = 'student:onboarding'
+LOGOUT_REDIRECT_URL = 'accounts:login'
 
-LOGIN_REDIRECT_URL = "dashboard"
-LOGOUT_REDIRECT_URL = "home"
-LOGIN_URL = "login"
+JAZZMIN_SETTINGS = {
+    "site_title": "Smart Career Admin",
+    "site_header": "Smart Career Guidance",
+    "site_brand": "CareerGuide",
+    "welcome_sign": "Welcome to Admin Dashboard",
+    "copyright": "CareerGuide",
+    "search_model": ["auth.User", "student.StudentProfile"],
+    "topmenu_links": [
+        {"name": "Home", "url": "/", "permissions": ["auth.view_user"]},
+    ],
+    "show_sidebar": True,
+    "navigation_expanded": True,
+}

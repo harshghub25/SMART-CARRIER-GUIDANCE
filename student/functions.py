@@ -2,7 +2,8 @@ from openai import OpenAI
 import os
 
 # Set your API key (you can also store in env variable)
-client = OpenAI(api_key="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")
+open_api_key = "Test"
+client = OpenAI(api_key=open_api_key)
 
 def get_ai_career_suggestion(profile):
     """

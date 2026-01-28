@@ -7,39 +7,96 @@
 <section class="hero-section" style="background-image: url('{% static 'images/home.jpg' %}');">
   <div class="container">
     <div class="hero-content">
-      <h1 class="hero-title">Smart Career Guidance for Students</h1>
-      <h5 class="hero-title">AI-powered Career Guidance System</h5>
+      <span class="badge bg-white text-primary fw-semibold px-3 py-2 mb-3" style="font-size: 0.9rem; border-radius: 20px;">
+        AI-Powered Career Guidance
+      </span>
+      <h1 class="hero-title">Find Your Perfect<br>Career Path</h1>
       <p class="hero-text mt-3">
-        Personalized career paths powered by skills, interests, and real-world industry data.
+        Personalized career recommendations powered by your skills, interests, and real-world industry data.
       </p>
-      <a href="{% url 'student:onboarding' %}" class="btn btn-primary btn-lg mt-3">
-        Explore Careers
-      </a>
+      <div class="d-flex gap-3 mt-4">
+        <a href="{% url 'student:onboarding' %}" class="btn btn-primary btn-lg px-4">
+          Get Started
+        </a>
+        <a href="{% url 'accounts:login' %}" class="btn btn-outline-light btn-lg px-4">
+          Login
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="py-5">
+  <div class="container text-center">
+    <span class="text-primary fw-semibold text-uppercase" style="letter-spacing: 2px; font-size: 0.85rem;">How It Works</span>
+    <h2 class="fw-bold mt-2 mb-2">Your Journey in 3 Simple Steps</h2>
+    <p class="text-muted mb-5 mx-auto" style="max-width: 550px;">Create your profile, let our AI analyze your strengths, and get a personalized career roadmap.</p>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card feature-card text-center h-100">
+          <div class="step-icon mx-auto mb-3">
+            <span>&#128221;</span>
+          </div>
+          <h5 class="fw-bold">1. Build Your Profile</h5>
+          <p class="text-muted mb-0">Enter your degree, skills, and interests to get started.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card feature-card text-center h-100">
+          <div class="step-icon mx-auto mb-3">
+            <span>&#129302;</span>
+          </div>
+          <h5 class="fw-bold">2. AI Analyzes</h5>
+          <p class="text-muted mb-0">Our AI engine evaluates your profile against industry trends.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card feature-card text-center h-100">
+          <div class="step-icon mx-auto mb-3">
+            <span>&#127919;</span>
+          </div>
+          <h5 class="fw-bold">3. Get Your Path</h5>
+          <p class="text-muted mb-0">Receive a tailored career recommendation with actionable steps.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- FEATURES -->
-<section class="py-5">
-  <div class="container text-center">
-    <h2 class="fw-bold mb-5">How It Helps You</h2>
+<section class="py-5" style="background: linear-gradient(135deg, #f5f7ff 0%, #faf5ff 100%);">
+  <div class="container">
+    <div class="text-center">
+      <span class="text-primary fw-semibold text-uppercase" style="letter-spacing: 2px; font-size: 0.85rem;">Features</span>
+      <h2 class="fw-bold mt-2 mb-5">Everything You Need to Succeed</h2>
+    </div>
     <div class="row g-4">
       <div class="col-md-4">
-        <div class="card feature-card">
+        <div class="card feature-card h-100">
+          <div class="feature-icon-wrap mb-3">
+            <span class="feature-icon bg-primary">&#128200;</span>
+          </div>
           <h5 class="fw-bold">Skill Gap Analysis</h5>
-          <p class="text-muted">Discover where you stand and what to learn next.</p>
+          <p class="text-muted mb-0">Discover where you stand and what to learn next to stay competitive.</p>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="card feature-card">
+        <div class="card feature-card h-100">
+          <div class="feature-icon-wrap mb-3">
+            <span class="feature-icon bg-success">&#128739;</span>
+          </div>
           <h5 class="fw-bold">Career Roadmaps</h5>
-          <p class="text-muted">Step-by-step guidance to your dream role.</p>
+          <p class="text-muted mb-0">Step-by-step guidance from where you are to your dream role.</p>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="card feature-card">
+        <div class="card feature-card h-100">
+          <div class="feature-icon-wrap mb-3">
+            <span class="feature-icon bg-warning">&#128218;</span>
+          </div>
           <h5 class="fw-bold">Course Recommendations</h5>
-          <p class="text-muted">Learn what industry actually needs.</p>
+          <p class="text-muted mb-0">Learn exactly what the industry needs with curated resources.</p>
         </div>
       </div>
     </div>
@@ -47,26 +104,48 @@
 </section>
 
 <!-- STATS -->
-<section class="py-5 bg-light text-center">
+<section class="py-5 text-center">
   <div class="container">
-    <h2 class="fw-bold mb-5">Our Impact</h2>
+    <span class="text-primary fw-semibold text-uppercase" style="letter-spacing: 2px; font-size: 0.85rem;">Our Impact</span>
+    <h2 class="fw-bold mt-2 mb-5">Trusted by Students Everywhere</h2>
     <div class="row g-4">
-      <div class="col-md-3">
-        <h3 class="fw-bold">1M+</h3>
-        <p class="text-muted">Students Guided</p>
+      <div class="col-6 col-md-3">
+        <div class="stat-block">
+          <h3 class="fw-bold stat-number">1M+</h3>
+          <p class="text-muted mb-0">Students Guided</p>
+        </div>
       </div>
-      <div class="col-md-3">
-        <h3 class="fw-bold">60%</h3>
-        <p class="text-muted">Career Matches Achieved</p>
+      <div class="col-6 col-md-3">
+        <div class="stat-block">
+          <h3 class="fw-bold stat-number">60%</h3>
+          <p class="text-muted mb-0">Career Match Rate</p>
+        </div>
       </div>
-      <div class="col-md-3">
-        <h3 class="fw-bold">200+</h3>
-        <p class="text-muted">Expert Mentors</p>
+      <div class="col-6 col-md-3">
+        <div class="stat-block">
+          <h3 class="fw-bold stat-number">200+</h3>
+          <p class="text-muted mb-0">Expert Mentors</p>
+        </div>
       </div>
-      <div class="col-md-3">
-        <h3 class="fw-bold">Free</h3>
-        <p class="text-muted">To Get Started</p>
+      <div class="col-6 col-md-3">
+        <div class="stat-block">
+          <h3 class="fw-bold stat-number">Free</h3>
+          <p class="text-muted mb-0">To Get Started</p>
+        </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-5">
+  <div class="container">
+    <div class="cta-banner text-center text-white p-5" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 20px;">
+      <h2 class="fw-bold mb-2">Ready to Discover Your Career?</h2>
+      <p class="mb-4 opacity-75" style="font-size: 1.1rem;">Join thousands of students who found their path with Smart Career Guidance.</p>
+      <a href="{% url 'student:onboarding' %}" class="btn btn-light btn-lg px-5 fw-semibold" style="border-radius: 30px;">
+        Start Now — It's Free
+      </a>
     </div>
   </div>
 </section>

@@ -1,16 +1,15 @@
-from openai import OpenAI
-import os
+import google.generativeai as genai
 
-# Set your API key (you can also store in env variable)
-open_api_key = os.getenv("OPEN_AI_KEY")
-client = OpenAI(api_key=open_api_key)
+genai.configure(api_key="AIzaSyBPGVDPV5Bilh_oJKA7DYdo2EqFdVjB0ZA")
+model = genai.GenerativeModel("gemini-2.5-flash")
 
 def get_ai_career_suggestion(profile):
     """
     Generate career suggestion from student profile using AI
     """
-    # Prepare prompt for AI
     prompt = f"""
+    You are a career guidance expert.
+
     Student Profile:
     Education: {profile.degree}
     Graduation Year: {profile.graduation_year}
@@ -22,14 +21,8 @@ def get_ai_career_suggestion(profile):
     """
 
     try:
-        response = client.chat.completions.create(
-        model="gpt-4o-mini",  # cheap + good
-        messages=[
-            {"role": "system", "content": "You are a career guidance expert."},
-            {"role": "user", "content": prompt}
-        ]
-    )
-        return response.choices[0].message.content
+        response = model.generate_content(prompt)
+        return response.text
     except Exception as e:
         print("AI API error:", e)
-        return "Explore skills → Internship → Specialization"  # fallback
+        return "Explore skills → Internship → Specialization"

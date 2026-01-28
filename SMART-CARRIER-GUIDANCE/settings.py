@@ -11,7 +11,7 @@ load_dotenv()
 SECRET_KEY = 'django-insecure-12345'
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*", "harsh2725.pythonanyehere.com"]
 
 
 # ---------------- APPLICATIONS ----------------
@@ -90,6 +90,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # ---------------- STATIC FILES ----------------
 STATIC_URL = '/static/'
+STATIC_ROOT = '/home/harsh2725/SMART-CARRIER-GUIDANCE/staticfiles'
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]

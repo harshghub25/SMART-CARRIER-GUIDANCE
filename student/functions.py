@@ -1,6 +1,6 @@
 import google.generativeai as genai
 
-genai.configure(api_key="AIzaSyBPGVDPV5Bilh_oJKA7DYdo2EqFdVjB0ZA")
+genai.configure(api_key="AIzaSyARd_OmWv8F6knd42AWR9Qw6MrPKIXjkuw")
 model = genai.GenerativeModel("gemini-2.5-flash")
 
 def get_ai_career_suggestion(profile):
